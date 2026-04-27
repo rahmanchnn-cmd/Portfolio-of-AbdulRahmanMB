@@ -210,7 +210,7 @@
                 </div>
                 
                 <div style="margin-top: 4rem;">
-                    <a href="AbdulRahman_Detailed_Portfolio.docx" download class="btn" style="display: inline-flex; align-items: center; gap: 0.8rem; font-size: 1.1rem; padding: 1.2rem 3rem;">
+                    <a href="AbdulRahman_Detailed_Portfolio.docx" download class="btn" onclick="return checkPassword(event)" style="display: inline-flex; align-items: center; gap: 0.8rem; font-size: 1.1rem; padding: 1.2rem 3rem;">
                         <i class="fas fa-file-download" style="font-size: 1.3rem;"></i> Download Detailed Portfolio
                     </a>
                 </div>
@@ -463,6 +463,21 @@
                 document.body.style.overflow = 'auto';
             }
         });
+
+        // Password check for download
+        function checkPassword(event) {
+            const password = prompt("Please enter the password to download the portfolio:");
+            // You can change "240473" to any password you prefer
+            if (password === "240473") {
+                return true;
+            } else {
+                if (password !== null) {
+                    alert("Incorrect password.");
+                }
+                event.preventDefault();
+                return false;
+            }
+        }
     </script>
 </body>
 </html>
